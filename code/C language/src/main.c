@@ -12,7 +12,7 @@ int main() {
     char* name;
     int code = safeInput(&name, 10, PRINT_MESS);
 
-    if (code == 1)
+    if (code == SUCCESS)
         printf("\nNhập thành công!");
     else if (code == EXTRA_INPUT)
         printf("\nNhập thừa giá trị!");

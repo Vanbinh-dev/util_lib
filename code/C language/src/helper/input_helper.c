@@ -31,7 +31,10 @@ int safeInput(char** buffer, size_t maxLen, char* mess) {
 
     printf("Chạy qua điều kiện!\n");
 
+    if (*buffer != NULL)
+        free(*buffer);
+
     *buffer = tempBuffer;
 
-    return 1;
+    return SUCCESS;
 }
