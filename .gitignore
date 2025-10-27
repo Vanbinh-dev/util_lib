@@ -1,0 +1,10 @@
+.vscode
+.editorconfig
+
+
+*.exe
+*.o
+*.log
+*.temp
+
+.env
