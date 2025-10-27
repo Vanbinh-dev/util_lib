@@ -9,15 +9,8 @@ int main() {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-    char* name;
-    int code = safeInput(&name, 10, PRINT_MESS);
-
-    if (code == SUCCESS)
-        printf("\nNhập thành công!");
-    else if (code == EXTRA_INPUT)
-        printf("\nNhập thừa giá trị!");
-    else if (code == MALLOC_ERROR)
-        printf("\nLỗi ngay lúc malloc!");
+    int num = completeIntInput(10);
+    printf("Giá trị của num! Num = %d", num);
 
     return 0;
 }
