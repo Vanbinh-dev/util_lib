@@ -2,9 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../include/input_helper.h"
-#include "../../include/error_code.h"
-#include "../../include/input_validation.h"
+#include "../../include/helper/input_helper.h"
+#include "../../include/helper/input_validation.h"
+
+#include "../../include/code/error_code.h"
 
 void removeExtraBuffer() {
     int c;
@@ -20,7 +21,7 @@ int safeInput(char** buffer, size_t maxLen, char* mess) {
     if (tempBuffer == NULL)
         return MALLOC_ERROR;
 
-    printf("Nhập: ");
+    printf("Enter: ");
     fgets(tempBuffer, maxLen, stdin);
 
     if (strlen(tempBuffer) + 1 == maxLen) {
@@ -82,7 +83,7 @@ char* completeInput(size_t maxSize) {
     do {
         returnCode = safeInput(&buffer, maxSize, PRINT_MESS);
         if (returnCode != SUCCESS)
-            printf("\nNhập sai, có thể quá dài. Hoặc lỗi phát sinh!\n");
+            printf("\nWRONG INPUT! MAYBE LENGHT SIZE TOO LONG!!\n");
         else
             break;
     } while (true);
@@ -97,7 +98,7 @@ int completeIntInput(size_t maxSize) {
     do {
         num = safeIntInput(maxSize);
         if (num == INT_FORMAT_ERROR)
-            printf("\nNhập giá trị số không hợp lệ!\n");
+            printf("\nINVALID NUMBER INPUT!\n");
         else
             break;
     } while (true);
@@ -112,7 +113,7 @@ double completeDoubleInput(size_t maxSize) {
     do {
         num = safeIntInput(maxSize);
         if (num == DOUBLE_FORMAT_ERROR)
-            printf("\nNhập giá trị số không hợp lệ!\n");
+            printf("\nINVALID NUMBER!!\n");
         else
             break;
     } while (true);

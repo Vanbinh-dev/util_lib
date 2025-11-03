@@ -3,6 +3,8 @@
 
 #define PRINT_MESS "Nhập vào giá trị"
 
+#include <stdio.h>
+
 void removeExtraBuffer();
 
 int safeInput(char** buffer, size_t maxSize, char* mess);
